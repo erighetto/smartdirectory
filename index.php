@@ -27,7 +27,14 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
     ),
 ));
 
+$app->register(new DF\Silex\Provider\YamlConfigServiceProvider(__DIR__ . '/settings.yml'));
+
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => $app['config']['database']
+));
+
 $app->mount('/', include __DIR__ .'/_home.php');
-$app->mount('/', include __DIR__ .'/_subdir.php');
+$app->mount('/', include __DIR__ .'/_parent.php');
+$app->mount('/', include __DIR__ .'/_child.php');
 
 $app->run();

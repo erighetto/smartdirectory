@@ -108,7 +108,7 @@ html { box-sizing: border-box; }
 @-ms-viewport { width: device-width; }
 html { font-size: 16px; -ms-overflow-style: scrollbar; -webkit-tap-highlight-color: transparent; }
 
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 1rem; line-height: 1.5; color: #373a3c; background-color: #fff; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Dosis", Arial, sans-serif; font-size: 1rem; line-height: 1.5; color: #1a181d; background-color: #fff; }
 
 [tabindex="-1"]:focus { outline: none !important; }
 
@@ -248,7 +248,7 @@ code { padding: 0.2rem 0.4rem; font-size: 90%; color: #bd4147; background-color:
 kbd { padding: 0.2rem 0.4rem; font-size: 90%; color: #fff; background-color: #333; border-radius: 0.2rem; }
 kbd kbd { padding: 0; font-size: 100%; font-weight: bold; }
 
-pre { display: block; margin-top: 0; margin-bottom: 1rem; font-size: 90%; color: #373a3c; }
+pre { display: block; margin-top: 0; margin-bottom: 1rem; font-size: 90%; color: #1a181d; }
 pre code { padding: 0; font-size: inherit; color: inherit; background-color: transparent; border-radius: 0; }
 
 .pre-scrollable { max-height: 340px; overflow-y: scroll; }
@@ -607,11 +607,11 @@ pre code { padding: 0; font-size: inherit; color: inherit; background-color: tra
 .table-hover .table-danger:hover { background-color: #ebcccc; }
 .table-hover .table-danger:hover > td, .table-hover .table-danger:hover > th { background-color: #ebcccc; }
 
-.thead-inverse th { color: #fff; background-color: #373a3c; }
+.thead-inverse th { color: #fff; background-color: #1a181d; }
 
 .thead-default th { color: #55595c; background-color: #eceeef; }
 
-.table-inverse { color: #eceeef; background-color: #373a3c; }
+.table-inverse { color: #eceeef; background-color: #1a181d; }
 .table-inverse th, .table-inverse td, .table-inverse thead th { border-color: #55595c; }
 .table-inverse.table-bordered { border: 0; }
 
@@ -724,11 +724,11 @@ a.btn.disabled, fieldset[disabled] a.btn { pointer-events: none; }
 .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary:disabled:focus, .btn-primary:disabled.focus { background-color: #0275d8; border-color: #0275d8; }
 .btn-primary.disabled:hover, .btn-primary:disabled:hover { background-color: #0275d8; border-color: #0275d8; }
 
-.btn-secondary { color: #373a3c; background-color: #fff; border-color: #ccc; }
-.btn-secondary:hover { color: #373a3c; background-color: #e6e6e6; border-color: #adadad; }
-.btn-secondary:focus, .btn-secondary.focus { color: #373a3c; background-color: #e6e6e6; border-color: #adadad; }
-.btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle { color: #373a3c; background-color: #e6e6e6; border-color: #adadad; background-image: none; }
-.btn-secondary:active:hover, .btn-secondary:active:focus, .btn-secondary:active.focus, .btn-secondary.active:hover, .btn-secondary.active:focus, .btn-secondary.active.focus, .open > .btn-secondary.dropdown-toggle:hover, .open > .btn-secondary.dropdown-toggle:focus, .open > .btn-secondary.dropdown-toggle.focus { color: #373a3c; background-color: #d4d4d4; border-color: #8c8c8c; }
+.btn-secondary { color: #1a181d; background-color: #fff; border-color: #ccc; }
+.btn-secondary:hover { color: #1a181d; background-color: #e6e6e6; border-color: #adadad; }
+.btn-secondary:focus, .btn-secondary.focus { color: #1a181d; background-color: #e6e6e6; border-color: #adadad; }
+.btn-secondary:active, .btn-secondary.active, .open > .btn-secondary.dropdown-toggle { color: #1a181d; background-color: #e6e6e6; border-color: #adadad; background-image: none; }
+.btn-secondary:active:hover, .btn-secondary:active:focus, .btn-secondary:active.focus, .btn-secondary.active:hover, .btn-secondary.active:focus, .btn-secondary.active.focus, .open > .btn-secondary.dropdown-toggle:hover, .open > .btn-secondary.dropdown-toggle:focus, .open > .btn-secondary.dropdown-toggle.focus { color: #1a181d; background-color: #d4d4d4; border-color: #8c8c8c; }
 .btn-secondary.disabled:focus, .btn-secondary.disabled.focus, .btn-secondary:disabled:focus, .btn-secondary:disabled.focus { background-color: #fff; border-color: #ccc; }
 .btn-secondary.disabled:hover, .btn-secondary:disabled:hover { background-color: #fff; border-color: #ccc; }
 
@@ -844,12 +844,12 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .dropup .dropdown-toggle::after { border-top: 0; border-bottom: 0.3em solid; }
 
-.dropdown-menu { position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0; margin: 2px 0 0; font-size: 1rem; color: #373a3c; text-align: left; list-style: none; background-color: #fff; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0.25rem; }
+.dropdown-menu { position: absolute; top: 100%; left: 0; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0; margin: 2px 0 0; font-size: 1rem; color: #1a181d; text-align: left; list-style: none; background-color: #fff; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 0.25rem; }
 
 .dropdown-divider { height: 1px; margin: 0.5rem 0; overflow: hidden; background-color: #e5e5e5; }
 
-.dropdown-item { display: block; width: 100%; padding: 3px 20px; clear: both; font-weight: normal; color: #373a3c; text-align: inherit; white-space: nowrap; background: none; border: 0; }
-.dropdown-item:focus, .dropdown-item:hover { color: #2b2d2f; text-decoration: none; background-color: #f5f5f5; }
+.dropdown-item { display: block; width: 100%; padding: 3px 20px; clear: both; font-weight: normal; color: #1a181d; text-align: inherit; white-space: nowrap; background: none; border: 0; }
+.dropdown-item:focus, .dropdown-item:hover { color: #0d0c0f; text-decoration: none; background-color: #f5f5f5; }
 .dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover { color: #fff; text-decoration: none; background-color: #0275d8; outline: 0; }
 .dropdown-item.disabled, .dropdown-item.disabled:focus, .dropdown-item.disabled:hover { color: #818a91; }
 .dropdown-item.disabled:focus, .dropdown-item.disabled:hover { text-decoration: none; cursor: not-allowed; background-color: transparent; background-image: none; filter: "progid:DXImageTransform.Microsoft.gradient(enabled = false)"; }
@@ -1437,7 +1437,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 @media (min-width: 544px) { .modal-dialog { max-width: 600px; margin: 30px auto; }
   .modal-sm { max-width: 300px; } }
 @media (min-width: 992px) { .modal-lg { max-width: 900px; } }
-.tooltip { position: absolute; z-index: 1070; display: block; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: 1.5; text-align: left; text-align: start; text-decoration: none; text-shadow: none; text-transform: none; white-space: normal; word-break: normal; word-spacing: normal; font-size: 0.875rem; word-wrap: break-word; opacity: 0; }
+.tooltip { position: absolute; z-index: 1070; display: block; font-family: -apple-system, BlinkMacSystemFont, "Dosis", Arial, sans-serif; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: 1.5; text-align: left; text-align: start; text-decoration: none; text-shadow: none; text-transform: none; white-space: normal; word-break: normal; word-spacing: normal; font-size: 0.875rem; word-wrap: break-word; opacity: 0; }
 .tooltip.in { opacity: 0.9; }
 .tooltip.tooltip-top, .tooltip.bs-tether-element-attached-bottom { padding: 5px 0; margin-top: -3px; }
 .tooltip.tooltip-top .tooltip-arrow, .tooltip.bs-tether-element-attached-bottom .tooltip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #000; }
@@ -1452,7 +1452,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 .tooltip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
 
-.popover { position: absolute; top: 0; left: 0; z-index: 1060; display: block; max-width: 276px; padding: 1px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: 1.5; text-align: left; text-align: start; text-decoration: none; text-shadow: none; text-transform: none; white-space: normal; word-break: normal; word-spacing: normal; font-size: 0.875rem; word-wrap: break-word; background-color: #fff; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 0.3rem; }
+.popover { position: absolute; top: 0; left: 0; z-index: 1060; display: block; max-width: 276px; padding: 1px; font-family: -apple-system, BlinkMacSystemFont, "Dosis", Arial, sans-serif; font-style: normal; font-weight: normal; letter-spacing: normal; line-break: auto; line-height: 1.5; text-align: left; text-align: start; text-decoration: none; text-shadow: none; text-transform: none; white-space: normal; word-break: normal; word-spacing: normal; font-size: 0.875rem; word-wrap: break-word; background-color: #fff; background-clip: padding-box; border: 1px solid rgba(0, 0, 0, 0.2); border-radius: 0.3rem; }
 .popover.popover-top, .popover.bs-tether-element-attached-bottom { margin-top: -10px; }
 .popover.popover-top .popover-arrow, .popover.bs-tether-element-attached-bottom .popover-arrow { bottom: -11px; left: 50%; margin-left: -11px; border-top-color: rgba(0, 0, 0, 0.25); border-bottom-width: 0; }
 .popover.popover-top .popover-arrow::after, .popover.bs-tether-element-attached-bottom .popover-arrow::after { bottom: 1px; margin-left: -10px; content: ""; border-top-color: #fff; border-bottom-width: 0; }
@@ -1517,7 +1517,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
   .carousel-control .icon-next { margin-right: -15px; }
   .carousel-caption { right: 20%; left: 20%; padding-bottom: 30px; }
   .carousel-indicators { bottom: 20px; } }
-.bg-inverse { background-color: #373a3c; }
+.bg-inverse { background-color: #1a181d; }
 
 .bg-faded { background-color: #f7f7f9; }
 
@@ -1783,3 +1783,5 @@ a.text-danger:focus, a.text-danger:hover { color: #c9302c; }
 @media print { .visible-print-inline-block { display: inline-block !important; } }
 
 @media print { .hidden-print { display: none !important; } }
+
+body { font-family: 'Dosis', sans-serif; padding-bottom: 20px; }

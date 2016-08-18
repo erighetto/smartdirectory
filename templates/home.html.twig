@@ -1,10 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ title }} - {% endblock %}
+{% block title %}{{ title }}{% endblock %}
 {% block body %}
     <div class="jumbotron">
         <div class="container">
-            <h1>Home</h1>
-
+            <h1>{{ title }}</h1>
+            <ul class="list-group">
+                {% for item in categ %}
+                    <li class="list-group-item">
+                        <a href="{{ app.url_generator.generate('parent',{"cat":item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">
+                            {{ item.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 {% endblock %}

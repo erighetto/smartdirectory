@@ -8,10 +8,12 @@
         }
     ],
     "require": {
-      "silex/silex": "~2.0",
+      "silex/silex": "2.0.x-dev",
       "twig/twig": "^1.24",
       "symfony/asset": "^3.1",
       "twbs/bootstrap": "4.0.0-alpha.3",
-        "symfony/twig-bridge": "^3.1"
+      "symfony/twig-bridge": "^3.1",
+      "doctrine/dbal": "~2.2",
+      "df/silex-yaml-config-provider": "dev-master"
     }
 }

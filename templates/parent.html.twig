@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <ul class="list-group">
+            {% for item in categ %}
+                <li class="list-group-item">
+                    <a href="{{ app.url_generator.generate('child',{
+                        "cat1":whereiam.name|lower|replace({' ': "-"})~"-"~whereiam.cid,
+                        "cat2":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                    }) }}">
+                        {{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% for link in links %}
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">{{ link.title|raw }}</h4>
+                        <p class="card-text">{{ link.description|raw }}</p>
+                        <a href="{{ link.url }}" target="_blank">{{ link.url }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
