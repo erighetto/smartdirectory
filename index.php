@@ -27,7 +27,7 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
     ),
 ));
 
-$app->mount('/', include '_home.php');
-$app->mount('/', include '_subdir.php');
+$app->mount('/', include __DIR__ .'/_home.php');
+$app->mount('/', include __DIR__ .'/_subdir.php');
 
 $app->run();
