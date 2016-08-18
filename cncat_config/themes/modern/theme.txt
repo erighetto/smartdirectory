@@ -1,3 +1,0 @@
-title=Modern Theme
-screenshot=screenshot.png
-description=Modern Theme

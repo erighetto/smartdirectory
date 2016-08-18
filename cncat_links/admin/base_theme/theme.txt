@@ -1,3 +1,0 @@
-title=%NAME%
-screenshot=%IMAGE%
-description=%DESCR%

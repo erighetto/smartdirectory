@@ -1,3 +1,0 @@
-title=Default Theme
-screenshot=screenshot.png
-description=Default Theme

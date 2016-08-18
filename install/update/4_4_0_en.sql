@@ -1,1 +1,0 @@
-ALTER TABLE `%prefix%items` ADD `item_title_translite` varchar(510) NOT NULL

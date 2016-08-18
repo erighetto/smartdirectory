@@ -1,7 +1,0 @@
-CREATE TABLE `%prefix%images` (`img_id` int(11) NOT NULL auto_increment, `img_cid` int(11) NOT NULL default '0', `img_title` varchar(50) NOT NULL default '', `img_mime` varchar(20) NOT NULL default '', `img_data` mediumblob NOT NULL, `thumb_data` mediumblob NOT NULL, PRIMARY KEY (`img_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-CREATE TABLE `%prefix%img_cats` (`cat_id` int(11) NOT NULL auto_increment, `cat_title` varchar(255) NOT NULL default '', PRIMARY KEY (`cat_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-CREATE TABLE `%prefix%banners` (`id` int(11) NOT NULL auto_increment, `code` text NOT NULL, `comment` text NOT NULL, `page` tinyint(4) NOT NULL default '0', `cat_id` int(11) NOT NULL default '0', `child_cats` tinyint(4) NOT NULL default '0', `pattern` varchar(255) default NULL, `item_type` varchar(255) default NULL, `position` varchar(255) NOT NULL default '', `enable_php` tinyint(4) NOT NULL default '0', `sort_order` int(11) NOT NULL default '0', `disabled` tinyint(4) NOT NULL default '0', PRIMARY KEY (`id`), KEY `disabled` (`disabled`,`sort_order`,`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-INSERT INTO `%prefix%config` (`name`, `value`) VALUES('image_width', '640');
-INSERT INTO `%prefix%config` (`name`, `value`) VALUES('image_height', '480');
-INSERT INTO `%prefix%config` (`name`, `value`) VALUES('image_twidth', '150');
-INSERT INTO `%prefix%config` (`name`, `value`) VALUES('image_theight', '150');

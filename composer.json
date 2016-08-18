@@ -1,11 +1,16 @@
 {
     "name": "erighetto/smartdirectory",
-    "description": "Fork of http://www.cn-software.com/en/cncat",
+    "description": "Simple Link categorizatio",
     "authors": [
         {
             "name": "Emanuel Righetto",
             "email": "posta@emanuelrighetto.it"
         }
     ],
-    "require": {}
+    "require": {
+      "silex/silex": "~2.0",
+      "twig/twig": "^1.24",
+      "symfony/asset": "^3.1",
+      "twbs/bootstrap": "4.0.0-alpha.3"
+    }
 }

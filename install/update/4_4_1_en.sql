@@ -1,1 +1,0 @@
-ALTER TABLE `%prefix%moders` ADD `imgbr_allow` TINYINT( 1 ) NOT NULL DEFAULT '0' AFTER `cat_edit` 
