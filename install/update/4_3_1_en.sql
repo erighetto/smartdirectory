@@ -1,0 +1,14 @@
+ALTER TABLE `%prefix%items` ADD `item_submit_type` TINYINT NOT NULL DEFAULT '0' AFTER `item_submit_date`;
+ALTER TABLE `%prefix%items` ADD `item_insert_type` TINYINT NOT NULL DEFAULT '1' AFTER `item_insert_date`;
+ALTER TABLE `%prefix%items` CHANGE `item_image` `item_image` MEDIUMBLOB NULL;
+ALTER TABLE `%prefix%cats` CHANGE `image` `image` MEDIUMBLOB NULL;
+ALTER TABLE `%prefix%banners` ADD `condition` VARCHAR( 255 ) NOT NULL AFTER `code`;
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('link_add_min_pr', '0');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('link_add_min_cy', '0');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('check_bots_list', 'Aport,Googlebot,Lycos,Mail.Ru,MSNBot,Slurp,StackRambler,WebAlta,Yandex');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('check_robots_txt', '0');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('item_type_on_main', '-1');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('cat_admin_view', '1');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('add_cat_view', '1');
+INSERT INTO `%prefix%config` (`name`, `value`) VALUES('check_user_agent', '');
+UPDATE `%prefix%items` SET `item_submit_type` = 1 WHERE `item_status` = 1;

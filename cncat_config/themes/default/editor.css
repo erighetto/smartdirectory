@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 0.7em Verdana, sans-serif;
+    background: white;
+    color: black;
+    padding: 10px;
+}
+
+a {
+    background: inherit;
+    color: #244296;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a img {
+    border: 0;
+}
+
+p, center, ol, ul {
+    margin: 10px 0;
+}
+
+ol, ul {
+    margin-left: 30px;
+}

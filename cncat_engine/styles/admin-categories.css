@@ -1,0 +1,44 @@
+#categories {
+    padding: 0;
+    list-style: none;
+}
+    #categories ul {
+        list-style: none;
+    }
+        #categories div.info {
+            margin: 10px 0;
+            padding: 5px 8px;
+        }
+            #categories .toggler {
+                margin: 0 5px;
+                border: 1px solid silver;
+            }
+        #categories .level0 {
+            background: #dfdfdf;
+        }
+            #categories .level0 .title {
+                font-size: 20px;
+            }
+        #categories .level1 {
+            background: #eee;
+        }
+            #categories .level1 .title {
+                font-size: 18px;
+            }
+        #categories .level2 {
+            background: #f4f4f4;
+        }
+            #categories .level2 .title {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        #categories .level3 {
+            background: #f7f7f7;
+        }
+            #categories .level3 .title {
+                font-size: 12px;
+                font-weight: bold;
+            }
+    #categories ul.invisible {
+        display: none;
+    }

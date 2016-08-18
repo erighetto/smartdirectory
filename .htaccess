@@ -1,0 +1,29 @@
+<FilesMatch "\.tpl$">
+  Order allow,deny
+  Deny from all
+</FilesMatch> 
+
+<IfModule mod_php4.c> 
+	php_flag session.use_trans_sid off
+	php_flag magic_quotes_gpc off
+  php_flag register_globals off
+</IfModule>
+
+<IfModule mod_php5.c> 
+	php_flag session.use_trans_sid off
+	php_flag magic_quotes_gpc off
+  php_flag register_globals off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	
+  RewriteRule sitemap.xml cncat_sitemap.php
+  RewriteRule jump.php cncat_jump.php
+	RewriteRule ^page_([-a-z0-9_]+)\.html page.php?id=$1 [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	
+	RewriteRule . index.php [QSA,L]
+</IfModule>
