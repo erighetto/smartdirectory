@@ -9,7 +9,7 @@
             <ul class="list-group">
                 {% for item in categ %}
                     <li class="list-group-item">
-                        <a href="{{ app.url_generator.generate('child',{"cat":item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">
+                        <a href="{{ app.url_generator.generate('child',{"cat1":item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">
                             {{ item.name }}</a>
                     </li>
                 {% endfor %}
