@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+                <a href="{{ app.url_generator.generate('level1',{"cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid}) }}">{{ parent.name }}</a>
+                -
+                <a href="{{ app.url_generator.generate('level2',{
+                    "cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
+                    "cat2":children.name|lower|replace({' ': "-"})~"-"~children.cid,
+                }) }}">{{ children.name }}</a>
+                -
+                {{ actual.name }}
+            </h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for link in links %}
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title"><a href="{{ link.url }}" target="_blank">{{ link.title|raw }}</a></h4>
+                            <p class="card-text">{{ link.description|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
