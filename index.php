@@ -11,7 +11,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $app = new Silex\Application();
 
 // set debug mode
-$app['debug'] = true;
+$app['debug'] = false;
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/templates',
@@ -33,11 +33,24 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => $app['config']['database']
 ));
 
+$app->get('/403.html', function (Silex\Application $app) {
+
+    $message = "Non hai accesso a questa sezione!";
+    $app->abort(403, $message);
+
+})->bind('error403');
+
+$app->get('/404.html', function (Silex\Application $app) {
+
+    $message = "Cerchi qualcosa che non esiste piu!";
+    $app->abort(404, $message);
+
+})->bind('error404');
+
+
 $app->mount('/', include __DIR__ .'/_home.php');
 $app->mount('/', include __DIR__ .'/_level1.php');
 $app->mount('/', include __DIR__ .'/_level2.php');
 $app->mount('/', include __DIR__ .'/_level3.php');
-$app->mount('/', include __DIR__ .'/_404.php');
-$app->mount('/', include __DIR__ .'/_403.php');
 
 $app->run();
