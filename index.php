@@ -37,5 +37,7 @@ $app->mount('/', include __DIR__ .'/_home.php');
 $app->mount('/', include __DIR__ .'/_level1.php');
 $app->mount('/', include __DIR__ .'/_level2.php');
 $app->mount('/', include __DIR__ .'/_level3.php');
+$app->mount('/', include __DIR__ .'/_404.php');
+$app->mount('/', include __DIR__ .'/_403.php');
 
 $app->run();
