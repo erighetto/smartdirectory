@@ -15,8 +15,7 @@
                             "cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
                             "cat2":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
                             "cat3":item.name|lower|replace({' ': "-"})~"-"~item.cid,
-                        }) }}">
-                            {{ item.name }}</a>
+                        }) }}">{{ item.name }}</a>
                     </li>
                 {% endfor %}
             </ul>

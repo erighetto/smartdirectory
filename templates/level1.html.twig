@@ -10,8 +10,7 @@
                     <a href="{{ app.url_generator.generate('level2',{
                         "cat1":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
                         "cat2":item.name|lower|replace({' ': "-"})~"-"~item.cid,
-                    }) }}">
-                        {{ item.name }}</a>
+                    }) }}">{{ item.name }}</a>
                 </li>
             {% endfor %}
         </ul>
