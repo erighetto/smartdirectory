@@ -6,3 +6,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [QSA,L]
 </IfModule>
+
+<Files "settings.yml">
+    require all denied
+    require host localhost
+    require ip 127.0.0.1
+</Files>
