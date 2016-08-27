@@ -10,7 +10,7 @@
             </h1>
             <ul class="list-group">
                 {% for item in children %}
-                    <li class="list-group-item">
+                    <li class="list-group-item"><i class="fa fa-folder-open-o" aria-hidden="true"></i>
                         <a href="{{ app.url_generator.generate('level3',{
                             "cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
                             "cat2":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,

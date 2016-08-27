@@ -6,7 +6,7 @@
             <h1>{{ title }}</h1>
             <ul class="list-group">
                 {% for item in categ %}
-                    <li class="list-group-item">
+                    <li class="list-group-item"><i class="fa fa-folder-open-o" aria-hidden="true"></i>
                         <a href="{{ app.url_generator.generate('level1',{"cat1":item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">
                             {{ item.name }}</a>
                     </li>
