@@ -4,12 +4,18 @@
     <div class="jumbotron">
         <div class="container">
             <h1>
-                <a href="{{ app.url_generator.generate('parent',{"cat":parent.name|lower|replace({' ': "-"})~"-"~parent.cid}) }}">{{ title }}</a>
+                <a href="{{ app.url_generator.generate('level1',{"cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid}) }}">{{ parent.name }}</a>
+                -
+                {{ actual.name }}
             </h1>
             <ul class="list-group">
-                {% for item in categ %}
+                {% for item in children %}
                     <li class="list-group-item">
-                        <a href="{{ app.url_generator.generate('child',{"cat1":item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">
+                        <a href="{{ app.url_generator.generate('level3',{
+                            "cat1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
+                            "cat2":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
+                            "cat3":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                        }) }}">
                             {{ item.name }}</a>
                     </li>
                 {% endfor %}

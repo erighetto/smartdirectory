@@ -612,12 +612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex.git",
-                "reference": "183e39aad0a3011fce6020a0b0067d6a730608d8"
+                "reference": "6f0b702e8c877c30fd39c86876e009f8b58329d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex/zipball/183e39aad0a3011fce6020a0b0067d6a730608d8",
-                "reference": "183e39aad0a3011fce6020a0b0067d6a730608d8",
+                "url": "https://api.github.com/repos/silexphp/Silex/zipball/6f0b702e8c877c30fd39c86876e009f8b58329d5",
+                "reference": "6f0b702e8c877c30fd39c86876e009f8b58329d5",
                 "shasum": ""
             },
             "require": {
@@ -689,7 +689,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2016-08-17 14:48:15"
+            "time": "2016-08-22 17:53:50"
         },
         {
             "name": "symfony/asset",

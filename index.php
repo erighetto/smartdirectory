@@ -34,7 +34,8 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 ));
 
 $app->mount('/', include __DIR__ .'/_home.php');
-$app->mount('/', include __DIR__ .'/_parent.php');
-$app->mount('/', include __DIR__ .'/_child.php');
+$app->mount('/', include __DIR__ .'/_level1.php');
+$app->mount('/', include __DIR__ .'/_level2.php');
+$app->mount('/', include __DIR__ .'/_level3.php');
 
 $app->run();
