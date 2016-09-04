@@ -17,6 +17,11 @@ $level1->get('/{cat1}', function (Silex\Application $app, $cat1) {
     $sql = "select * from cncat_cat where cid = ? order by name asc;";
     $actual = $app['db']->fetchAssoc($sql, array((int)$id1));
 
+    if ($actual['parent'] != 0) {
+        $message = "Cerchi qualcosa che non esiste piu!";
+        $app->abort(404, $message);
+    }
+
     return $app['twig']->render(
         'level1.html.twig',
         array(
