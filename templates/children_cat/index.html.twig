@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+                {% if parent %}
+                    <a href="{{ path('children_cat',{"lev1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid}) }}">{{ parent.name }}</a>
+                    <i class="fas fa-arrow-right"></i>
+                {% endif %}
+                {{ actual.name }}
+            </h1>
+            <ul class="list-group">
+                {% for item in children %}
+                    {% if parent %}
+                        <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
+                            <a href="{{ path('children_cat',{
+                                "lev1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
+                                "lev2":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
+                                "lev3":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                            }) }}">{{ item.name }}</a>
+                        </li>
+                    {% else %}
+                        <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
+                            <a href="{{ path('children_cat',{
+                                "lev1":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
+                                "lev2":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                            }) }}">{{ item.name }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for link in links %}
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-external-link-alt"></i> <a href="{{ link.url }}" target="_blank">{{ link.title|raw }}</a></h4>
+                            <p class="card-text">{{ link.description|raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

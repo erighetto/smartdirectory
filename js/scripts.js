@@ -1,7 +1,0 @@
-/**
- * Custom code
- */
-$(function() {
-
-
-});

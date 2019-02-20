@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  php:
+    image: erighetto/drupal-dev:latest
+    container_name: "${PROJECT_NAME}_php"
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    links:
+      - mysql
+      - mailhog
+    volumes:
+      - "./:/var/www/html"
+    environment:
+      WEB_DOCUMENT_ROOT: "/var/www/html/public"
+      PHP_IDE_CONFIG: "serverName=localhost"
+      POSTFIX_RELAYHOST: "${PROJECT_NAME}_mailhog:1025"
+
+  mysql:
+    image: mariadb:latest
+    container_name: "${PROJECT_NAME}_db"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: "${PROJECT_NAME}_mailhog"
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  pma:
+    image: phpmyadmin/phpmyadmin:latest
+    links:
+      - mysql
+    environment:
+      PMA_HOST: $MYSQL_HOSTNAME
+      PMA_USER: $MYSQL_USER
+      PMA_PASSWORD: $MYSQL_PASSWORD
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    ports:
+      - "8080:80"
