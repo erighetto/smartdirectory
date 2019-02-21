@@ -5,7 +5,8 @@
         <div class="container">
             <h1>
                 {% if parent %}
-                    <a href="{{ path('children_cat',{"lev1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid}) }}">{{ parent.name }}</a>
+                    {% set lev1 = parent.name ~ " " ~ parent.cid %}
+                    <a href="{{ path('children_cat',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
                     <i class="fas fa-arrow-right"></i>
                 {% endif %}
                 {{ actual.name }}
@@ -14,17 +15,22 @@
                 {% for item in children %}
                     {% if parent %}
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
+                            {% set lev1 = parent.name ~ " " ~ parent.cid %}
+                            {% set lev2 = actual.name ~ " " ~ actual.cid %}
+                            {% set lev3 = item.name ~ " " ~ item.cid %}
                             <a href="{{ path('children_cat',{
-                                "lev1":parent.name|lower|replace({' ': "-"})~"-"~parent.cid,
-                                "lev2":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
-                                "lev3":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                                "lev1":lev1|slugify,
+                                "lev2":lev2|slugify,
+                                "lev3":lev3|slugify,
                             }) }}">{{ item.name }}</a>
                         </li>
                     {% else %}
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
+                            {% set lev1 = actual.name ~ " " ~ actual.cid %}
+                            {% set lev2 = item.name ~ " " ~ item.cid %}
                             <a href="{{ path('children_cat',{
-                                "lev1":actual.name|lower|replace({' ': "-"})~"-"~actual.cid,
-                                "lev2":item.name|lower|replace({' ': "-"})~"-"~item.cid,
+                                "lev1":lev1|slugify,
+                                "lev2":lev2|slugify,
                             }) }}">{{ item.name }}</a>
                         </li>
                     {% endif %}
