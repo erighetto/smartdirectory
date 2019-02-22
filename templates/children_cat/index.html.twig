@@ -47,17 +47,20 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            {% for link in links %}
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title"><i class="fas fa-external-link-alt"></i> <a href="{{ link.url }}" target="_blank">{{ link.title|raw }}</a></h4>
-                            <p class="card-text">{{ link.description|raw }}</p>
+        {% for row in links|batch(2) %}
+            <div class="row">
+                {% for column in row %}
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-external-link-alt"></i>
+                                    <a href="{{ column.url }}" target="_blank">{{ column.title|raw }}</a></h4>
+                                <p class="card-text">{{ column.description|raw }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
