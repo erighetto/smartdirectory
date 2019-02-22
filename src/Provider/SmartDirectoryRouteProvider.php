@@ -8,6 +8,10 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use Fw\LastBundle\Router\RouteProvider;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class SmartDirectoryRouteProvider
+ * @package App\Provider
+ */
 class SmartDirectoryRouteProvider implements RouteProvider
 {
     /**

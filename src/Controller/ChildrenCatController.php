@@ -7,6 +7,10 @@ use App\Entity\CncatMain;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ChildrenCatController
+ * @package App\Controller
+ */
 class ChildrenCatController extends AbstractController
 {
     /**
@@ -39,22 +43,21 @@ class ChildrenCatController extends AbstractController
         $cncat = $this->getDoctrine()
             ->getRepository(CncatCat::class);
 
-        $children = $cncat->findBy(array('parent' => $id));
-        $actual = $cncat->findOneBy(array('cid' => $id));
+        $children = $cncat->findBy(['parent' => $id]);
+        $current = $cncat->findOneBy(['cid' => $id]);
 
-        if ($actual instanceof CncatCat) {
-            $parent = $cncat->findOneBy(array('cid' => $actual->getParent()));
+        if ($current instanceof CncatCat) {
+            $parents = $cncat->findParents($current->getParent());
         } else {
-            $parent = null;
+            $parents = null;
         }
 
-
         return $this->render('children_cat/index.html.twig', [
-            'title' => $actual->getName(),
+            'title' => $current->getName(),
             'links' => $links,
+            'parents' => $parents,
+            'current' => $current,
             'children' => $children,
-            'parent' => $parent,
-            'actual' => $actual,
         ]);
     }
 

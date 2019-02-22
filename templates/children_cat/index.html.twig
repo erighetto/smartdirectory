@@ -4,20 +4,28 @@
     <div class="jumbotron">
         <div class="container">
             <h1>
-                {% if parent %}
-                    {% set lev1 = parent.name ~ " " ~ parent.cid %}
-                    <a href="{{ path('children_cat',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
-                    <i class="fas fa-arrow-right"></i>
+                {% if parents %}
+                    {% for parent in parents %}
+                        {% if loop.first %}
+                        {% set lev1 = parent.name ~ " " ~ parent.cid %}
+                            <a href="{{ path('children_cat',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
+                            <i class="fas fa-arrow-right"></i>
+                         {% else %}
+                             {% set lev2 = parent.name ~ " " ~ parent.cid %}
+                             <a href="{{ path('children_cat',{"lev1":lev1|slugify,"lev2":lev2|slugify}) }}">{{ parent.name }}</a>
+                             <i class="fas fa-arrow-right"></i>
+                        {% endif %}
+                    {% endfor %}
                 {% endif %}
-                {{ actual.name }}
+                {{ current.name }}
             </h1>
             <ul class="list-group">
                 {% for item in children %}
-                    {% if parent %}
+                    {% if parents %}
+                        {% set lev1 = parents.0.name ~ " " ~ parents.0.cid %}
+                        {% set lev2 = current.name ~ " " ~ current.cid %}
+                        {% set lev3 = item.name ~ " " ~ item.cid %}
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
-                            {% set lev1 = parent.name ~ " " ~ parent.cid %}
-                            {% set lev2 = actual.name ~ " " ~ actual.cid %}
-                            {% set lev3 = item.name ~ " " ~ item.cid %}
                             <a href="{{ path('children_cat',{
                                 "lev1":lev1|slugify,
                                 "lev2":lev2|slugify,
@@ -26,7 +34,7 @@
                         </li>
                     {% else %}
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
-                            {% set lev1 = actual.name ~ " " ~ actual.cid %}
+                            {% set lev1 = current.name ~ " " ~ current.cid %}
                             {% set lev2 = item.name ~ " " ~ item.cid %}
                             <a href="{{ path('children_cat',{
                                 "lev1":lev1|slugify,
