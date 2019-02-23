@@ -2,27 +2,27 @@
 
 namespace App\Repository;
 
-use App\Entity\CncatMain;
+use App\Entity\Link;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * Class CncatMainRepository
+ * Class LinkRepository
  * @package App\Repository
  */
-class CncatMainRepository extends ServiceEntityRepository
+class LinkRepository extends ServiceEntityRepository
 {
     /**
-     * CncatMainRepository constructor.
+     * LinkRepository constructor.
      * @param RegistryInterface $registry
      */
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, CncatMain::class);
+        parent::__construct($registry, Link::class);
     }
 
     /**
-     * @return CncatMain|null
+     * @return Link|null
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function findAnybyCatId($cat_id)

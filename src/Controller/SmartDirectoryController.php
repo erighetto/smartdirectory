@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use App\Entity\CncatCat;
-use App\Entity\CncatMain;
+use App\Entity\Category;
+use App\Entity\Link;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class ChildrenCatController
+ * Class SmartDirectoryController
  * @package App\Controller
  */
-class ChildrenCatController extends AbstractController
+class SmartDirectoryController extends AbstractController
 {
     /**
-     * @Route("/{lev1}/{lev2}/{lev3}", name="children_cat")
+     * @Route("/{lev1}/{lev2}/{lev3}", name="smart_directory")
      * @param $lev1
      * @param $lev2
      * @param $lev3
@@ -36,23 +36,23 @@ class ChildrenCatController extends AbstractController
         }
 
         $links = $this->getDoctrine()
-            ->getRepository(CncatMain::class)
+            ->getRepository(Link::class)
             ->findAnybyCatId($id);
 
-        /** @var \App\Repository\CncatCatRepository $cncat */
+        /** @var \App\Repository\CategoryRepository $cncat */
         $cncat = $this->getDoctrine()
-            ->getRepository(CncatCat::class);
+            ->getRepository(Category::class);
 
         $children = $cncat->findBy(['parent' => $id]);
         $current = $cncat->findOneBy(['cid' => $id]);
 
-        if ($current instanceof CncatCat) {
+        if ($current instanceof Category) {
             $parents = $cncat->findParents($current->getParent());
         } else {
             $parents = null;
         }
 
-        return $this->render('children_cat/index.html.twig', [
+        return $this->render('smart_directory/index.html.twig', [
             'title' => $current->getName(),
             'links' => $links,
             'parents' => $parents,

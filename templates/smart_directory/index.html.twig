@@ -8,11 +8,11 @@
                     {% for parent in parents %}
                         {% if loop.first %}
                         {% set lev1 = parent.name ~ " " ~ parent.cid %}
-                            <a href="{{ path('children_cat',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
+                            <a href="{{ path('smart_directory',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
                             <i class="fas fa-arrow-right"></i>
                          {% else %}
                              {% set lev2 = parent.name ~ " " ~ parent.cid %}
-                             <a href="{{ path('children_cat',{"lev1":lev1|slugify,"lev2":lev2|slugify}) }}">{{ parent.name }}</a>
+                             <a href="{{ path('smart_directory',{"lev1":lev1|slugify,"lev2":lev2|slugify}) }}">{{ parent.name }}</a>
                              <i class="fas fa-arrow-right"></i>
                         {% endif %}
                     {% endfor %}
@@ -26,7 +26,7 @@
                         {% set lev2 = current.name ~ " " ~ current.cid %}
                         {% set lev3 = item.name ~ " " ~ item.cid %}
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
-                            <a href="{{ path('children_cat',{
+                            <a href="{{ path('smart_directory',{
                                 "lev1":lev1|slugify,
                                 "lev2":lev2|slugify,
                                 "lev3":lev3|slugify,
@@ -36,7 +36,7 @@
                         <li class="list-group-item"><i class="fa fa-folder-open" aria-hidden="true"></i>
                             {% set lev1 = current.name ~ " " ~ current.cid %}
                             {% set lev2 = item.name ~ " " ~ item.cid %}
-                            <a href="{{ path('children_cat',{
+                            <a href="{{ path('smart_directory',{
                                 "lev1":lev1|slugify,
                                 "lev2":lev2|slugify,
                             }) }}">{{ item.name }}</a>

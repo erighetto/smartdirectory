@@ -5,12 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CncatMain
+ * Link
  *
  * @ORM\Table(name="cncat_main")
- * @ORM\Entity(repositoryClass="App\Repository\CncatMainRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\LinkRepository")
  */
-class CncatMain
+class Link
 {
     /**
      * @var int

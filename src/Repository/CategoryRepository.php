@@ -2,27 +2,27 @@
 
 namespace App\Repository;
 
-use App\Entity\CncatCat;
+use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * Class CncatCatRepository
+ * Class CategoryRepository
  * @package App\Repository
  */
-class CncatCatRepository extends ServiceEntityRepository
+class CategoryRepository extends ServiceEntityRepository
 {
     /**
-     * CncatCatRepository constructor.
+     * CategoryRepository constructor.
      * @param RegistryInterface $registry
      */
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, CncatCat::class);
+        parent::__construct($registry, Category::class);
     }
 
     /**
-     * @return CncatCat[]
+     * @return Category[]
      */
     public function findAllOrdered(): array
     {
@@ -55,7 +55,7 @@ class CncatCatRepository extends ServiceEntityRepository
     {
         $object = $this->findOneBy(['cid' => $id]);
 
-        if (!$object instanceof CncatCat) {
+        if (!$object instanceof Category) {
             return;
         }
 

@@ -105,88 +105,6 @@ INSERT INTO `cncat_cat` (`cid`, `name`, `parent`, `count`) VALUES
 (66, 'Blog', 9, 0),
 (67, 'Servizi', 0, 0);
 
--- --------------------------------------------------------
-
---
--- Struttura della tabella `cncat_cat_linear`
---
-
-CREATE TABLE IF NOT EXISTS `cncat_cat_linear` (
-  `cid` int(11) DEFAULT NULL,
-  `name` text
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dump dei dati per la tabella `cncat_cat_linear`
---
-
-INSERT INTO `cncat_cat_linear` (`cid`, `name`) VALUES
-(1, 'Computer'),
-(2, 'Computer ::: Programmazione'),
-(3, 'Computer ::: Programmazione ::: Files Utili'),
-(4, 'Sport'),
-(6, 'Sport ::: Volley'),
-(7, 'Sport ::: Volley ::: maschile'),
-(8, 'Sport ::: Volley ::: femminile'),
-(9, 'Computer ::: Internet'),
-(10, 'Shopping'),
-(15, 'Auto e Motori'),
-(12, 'Tempo Libero'),
-(13, 'Tempo Libero ::: Spettacoli'),
-(14, 'Sport ::: MountainBike'),
-(16, 'Auto e Motori ::: Accessori'),
-(17, 'Auto e Motori ::: Assicurazioni'),
-(18, 'Tempo Libero ::: Cinema'),
-(19, 'Tempo Libero ::: Musica'),
-(20, 'Shopping ::: Moda'),
-(21, 'Shopping ::: Arredamento'),
-(22, 'Shopping ::: Hi-Fi'),
-(23, 'Società'),
-(24, 'Società ::: Disabili'),
-(25, 'Società ::: Politica'),
-(26, 'Società ::: Religione'),
-(27, 'Viaggi'),
-(28, 'Viaggi ::: Hotel'),
-(29, 'Viaggi ::: Meteo'),
-(30, 'Viaggi ::: Destinazioni'),
-(31, 'Cultura'),
-(32, 'Cultura ::: Arte'),
-(33, 'Cultura ::: Libri'),
-(34, 'Cultura ::: Istruzione'),
-(35, 'Tempo Libero ::: Cinema ::: Attori Attrici'),
-(36, 'Informazione'),
-(37, 'Informazione ::: Quotidiani'),
-(38, 'Informazione ::: Radio'),
-(39, 'Informazione ::: Tv'),
-(40, 'Affari e Finanza'),
-(45, 'Tempo Libero ::: Giochi'),
-(42, 'Affari e Finanza ::: Banche'),
-(43, 'Affari e Finanza ::: Borsa'),
-(44, 'Affari e Finanza ::: Lavoro'),
-(46, 'Salute'),
-(47, 'Salute ::: Alternativa'),
-(48, 'Salute ::: Ospedali'),
-(49, 'Salute ::: Riviste'),
-(50, 'Scienze'),
-(51, 'Scienze ::: Ricerca'),
-(52, 'Scienze ::: Umane'),
-(53, 'Scienze ::: Alternative'),
-(54, 'Pubbliche Istituzioni'),
-(55, 'Pubbliche Istituzioni ::: Ministeri'),
-(56, 'Pubbliche Istituzioni ::: Sindacati'),
-(57, 'Pubbliche Istituzioni ::: Partiti Politici'),
-(58, 'Aree Geografiche'),
-(59, 'Aree Geografiche ::: Italia'),
-(60, 'Aree Geografiche ::: Europa'),
-(61, 'Aree Geografiche ::: Regioni del Mondo'),
-(62, 'Tempo Libero ::: Animali'),
-(63, 'Tempo Libero ::: Cucina'),
-(64, 'Tempo Libero ::: Casa e Giardino'),
-(65, 'Sport ::: Volley ::: Amatoriale'),
-(66, 'Computer ::: Internet ::: Blog');
-
--- --------------------------------------------------------
-
 --
 -- Struttura della tabella `cncat_main`
 --
@@ -247,8 +165,7 @@ INSERT INTO `cncat_main` (`lid`, `title`, `description`, `url`, `cat1`, `gin`, `
 (57, 'PASSIONE VOLLEY', 'Sito non ufficiale del GS Volley Olmi di Milano - dedicato agli amanti della pallavolo', 'http://www.passionevolley.it', 6, 0, 1444, 0, 'panara.gianluca@alice.it', 1, 0, '2006-05-30 19:31:27', '', '', ''),
 (64, 'Negretto Camini d''Autore', 'Giuseppe Negretto, dal 1995 mette a frutto la sua esperienza professionale, nella costruzione di camini artigianali con materiali di recupero e di caminetti dal design moderno o classico. Si avvale della preziosa collaborazione di prestigiosi studi di architettura, per fornire un servizio completo, dalla progettazione alla realizzazione di complementi di arredo per interni.', 'https://www.negrettocamini.it', 64, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-06-15 01:49:14', '', '', ''),
 (65, 'Cortona Volley', 'Portale Associazione Sportiva Dilettantisca Cortona Volley, pallavolo Serie B2 maschile, Serie D femminile, Settore giovanile maschile e femminile', 'http://www.cortonavolley.it', 6, 0, 738, 0, 'info@cortonavolley.it', 1, 0, '2007-10-09 16:14:27', '', '', ''),
-(66, 'Studio Associato di Topografia', 'S.a.t. opera dal 1997 nel settore della topografia e dell''edilizia a supporto di privati, enti pubblici, imprese e liberi professionisti.', 'http://www.satgeorilievi.com', 67, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-10-22 09:55:07', '', '', ''),
-(67, 'Pensilina Pe.TraPark', 'La ditta PE.TRA srl, sfruttando le conoscenze nel settore propone le migliori soluzioni alle esigenze di copertura e di chiusura, sia per il settore industriale sia per il settore residenziale.\r\n\r\nAvvalendosi di collaboratori altamente qualificati si pone come obiettivo quello di consigliare e seguire i propri clienti sin dai primi contatti nella ricerca di soluzioni idonee a soddisfare qualsiasi esigenza e garantendo l''assistenza ai propri prodotti anche dopo la vendita.', 'http://www.petrapark.it', 64, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-12-19 09:29:41', '', '', '');
+(66, 'Studio Associato di Topografia', 'S.a.t. opera dal 1997 nel settore della topografia e dell''edilizia a supporto di privati, enti pubblici, imprese e liberi professionisti.', 'http://www.satgeorilievi.com', 67, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-10-22 09:55:07', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

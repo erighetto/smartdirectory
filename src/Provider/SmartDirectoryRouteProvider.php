@@ -2,7 +2,7 @@
 
 namespace App\Provider;
 
-use App\Entity\CncatCat;
+use App\Entity\Category;
 use Cocur\Slugify\SlugifyInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Fw\LastBundle\Router\RouteProvider;
@@ -42,20 +42,20 @@ class SmartDirectoryRouteProvider implements RouteProvider
     {
         $urls = [];
 
-        /** @var \App\Repository\CncatCatRepository $cncat */
-        $cncat = $this->doctrine->getRepository(CncatCat::class);
+        /** @var \App\Repository\CategoryRepository $cncat */
+        $cncat = $this->doctrine->getRepository(Category::class);
 
-        /** @var \App\Entity\CncatCat[] $parents */
+        /** @var \App\Entity\Category[] $parents */
         $parents = $cncat->findBy(array('parent' => 0), ['name' => 'asc']);
 
         foreach ($parents as $parent) {
             $urls[] = Request::create('/' . $this->getSlug($parent->getName(), $parent->getCid()));
-            /** @var \App\Entity\CncatCat[] $children */
+            /** @var \App\Entity\Category[] $children */
             $children = $cncat->findBy(array('parent' => $parent->getCid()), ['name' => 'asc']);
             foreach ($children as $child) {
                 $urls[] = Request::create('/' . $this->getSlug($parent->getName(), $parent->getCid()) . '/' .
                     $this->getSlug($child->getName(), $child->getCid()));
-                /** @var \App\Entity\CncatCat[] $grandchildren */
+                /** @var \App\Entity\Category[] $grandchildren */
                 $grandchildren = $cncat->findBy(array('parent' => $child->getCid()), ['name' => 'asc']);
                 foreach ($grandchildren as $grandchild) {
                     $urls[] = Request::create('/' . $this->getSlug($parent->getName(), $parent->getCid()) . '/' .

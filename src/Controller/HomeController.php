@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\CncatCat;
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,7 +18,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $categories = $this->getDoctrine()
-            ->getRepository(CncatCat::class)
+            ->getRepository(Category::class)
             ->findAllOrdered();
 
         return $this->render('home/index.html.twig', [
