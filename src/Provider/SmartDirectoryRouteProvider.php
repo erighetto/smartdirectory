@@ -59,7 +59,7 @@ class SmartDirectoryRouteProvider implements RouteProvider
                 $grandchildren = $cncat->findBy(array('parent' => $child->getCid()), ['name' => 'asc']);
                 foreach ($grandchildren as $grandchild) {
                     $urls[] = Request::create('/' . $this->getSlug($parent->getName(), $parent->getCid()) . '/' .
-                        $this->getSlug($child->getName(), $child->getCid()) .'/'.
+                        $this->getSlug($child->getName(), $child->getCid()) . '/' .
                         $this->getSlug($grandchild->getName(), $grandchild->getCid())
                     );
                 }

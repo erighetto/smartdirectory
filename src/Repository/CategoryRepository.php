@@ -51,7 +51,7 @@ class CategoryRepository extends ServiceEntityRepository
      * @param $tree
      * @param $id
      */
-    protected function buildTree(&$tree, $id)
+    private function buildTree(&$tree, $id)
     {
         $object = $this->findOneBy(['cid' => $id]);
 
@@ -67,6 +67,5 @@ class CategoryRepository extends ServiceEntityRepository
 
         $this->buildTree($tree, $object->getParent());
     }
-
 
 }

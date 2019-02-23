@@ -22,8 +22,8 @@ class LinkRepository extends ServiceEntityRepository
     }
 
     /**
+     * @param $cat_id
      * @return Link|null
-     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function findAnybyCatId($cat_id)
     {
@@ -35,8 +35,5 @@ class LinkRepository extends ServiceEntityRepository
 
         return $qb->execute();
     }
-
-}
-{
 
 }

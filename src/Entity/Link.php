@@ -119,6 +119,10 @@ class Link
      */
     private $resfield3 = 'NULL';
 
+    /**
+     * Link constructor.
+     * @throws \Exception
+     */
     public function __construct()
     {
         $this->insertDate = new \DateTime();

@@ -15,13 +15,14 @@ class SmartDirectoryController extends AbstractController
 {
     /**
      * @Route("/{lev1}/{lev2}/{lev3}", name="smart_directory")
+     *
      * @param $lev1
      * @param $lev2
      * @param $lev3
+     *
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function index($lev1, $lev2  = null, $lev3 = null)
+    public function index($lev1, $lev2 = null, $lev3 = null)
     {
         if (!empty($lev1)) {
             $id = $this->getId($lev1);
@@ -48,12 +49,14 @@ class SmartDirectoryController extends AbstractController
 
         if ($current instanceof Category) {
             $parents = $cncat->findParents($current->getParent());
+            $title = $current->getName();
         } else {
             $parents = null;
+            $title = null;
         }
 
         return $this->render('smart_directory/index.html.twig', [
-            'title' => $current->getName(),
+            'title' => $title,
             'links' => $links,
             'parents' => $parents,
             'current' => $current,
