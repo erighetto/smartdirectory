@@ -55,8 +55,9 @@ class CncatCatRepository extends ServiceEntityRepository
     {
         $object = $this->findOneBy(['cid' => $id]);
 
-        if (!$object instanceof CncatCat)
+        if (!$object instanceof CncatCat) {
             return;
+        }
 
         $tree[$object->getCid()] = $object;
 

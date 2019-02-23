@@ -41,7 +41,6 @@ class SmartDirectoryRouteProvider implements RouteProvider
     public function getRoutes(): array
     {
         $urls = [];
-        $urls[] = Request::create('/');
 
         /** @var \App\Repository\CncatCatRepository $cncat */
         $cncat = $this->doctrine->getRepository(CncatCat::class);

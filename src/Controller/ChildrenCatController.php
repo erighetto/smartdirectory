@@ -14,14 +14,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class ChildrenCatController extends AbstractController
 {
     /**
-     * @Route("/{lev1}/{lev2}/{lev3}", name="children_cat", defaults={"lev2"=null, "lev3"=null})
+     * @Route("/{lev1}/{lev2}/{lev3}", name="children_cat")
      * @param $lev1
      * @param $lev2
      * @param $lev3
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function index($lev1, $lev2, $lev3)
+    public function index($lev1, $lev2  = null, $lev3 = null)
     {
         if (!empty($lev1)) {
             $id = $this->getId($lev1);
