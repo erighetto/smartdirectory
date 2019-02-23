@@ -1,45 +1,4 @@
-
--- phpMyAdmin SQL Dump
--- version 3.5.2.2
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generato il: Feb 19, 2019 alle 20:08
--- Versione del server: 10.1.24-MariaDB
--- Versione PHP: 5.2.17
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `u971260997_ninja`
---
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `cncat_cat`
---
-
-CREATE TABLE IF NOT EXISTS `cncat_cat` (
-  `cid` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text,
-  `parent` int(11) DEFAULT NULL,
-  `count` int(11) DEFAULT '0',
-  PRIMARY KEY (`cid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=68 ;
-
---
--- Dump dei dati per la tabella `cncat_cat`
---
-
-INSERT INTO `cncat_cat` (`cid`, `name`, `parent`, `count`) VALUES
+INSERT INTO `categories` (`cid`, `name`, `parent`, `count`) VALUES
 (1, 'Computer', 0, 7),
 (2, 'Programmazione', 1, 1),
 (3, 'Files Utili', 2, 1),
@@ -105,34 +64,7 @@ INSERT INTO `cncat_cat` (`cid`, `name`, `parent`, `count`) VALUES
 (66, 'Blog', 9, 0),
 (67, 'Servizi', 0, 0);
 
---
--- Struttura della tabella `cncat_main`
---
-
-CREATE TABLE IF NOT EXISTS `cncat_main` (
-  `lid` int(11) NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
-  `url` text,
-  `cat1` int(11) DEFAULT NULL,
-  `gin` int(11) DEFAULT NULL,
-  `gout` int(11) DEFAULT NULL,
-  `moder_vote` int(11) DEFAULT NULL,
-  `email` text,
-  `type` int(11) DEFAULT NULL,
-  `broken` int(11) DEFAULT '0',
-  `insert_date` datetime DEFAULT NULL,
-  `resfield1` text,
-  `resfield2` text,
-  `resfield3` text,
-  PRIMARY KEY (`lid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=73 ;
-
---
--- Dump dei dati per la tabella `cncat_main`
---
-
-INSERT INTO `cncat_main` (`lid`, `title`, `description`, `url`, `cat1`, `gin`, `gout`, `moder_vote`, `email`, `type`, `broken`, `insert_date`, `resfield1`, `resfield2`, `resfield3`) VALUES
+INSERT INTO `links` (`lid`, `title`, `description`, `url`, `cat1`, `gin`, `gout`, `moder_vote`, `email`, `type`, `broken`, `insert_date`, `resfield1`, `resfield2`, `resfield3`) VALUES
 (71, 'Arredatore e interior designer a Vicenza, Padova e Verona', 'Progettazione arredamenti d&#039;interni, mobili d&#039;antiquariato e design a Vicenza, Padova e Verona by Anna Checchini', 'http://www.arredareconstile.it', 21, NULL, NULL, 0, 'emanuel.righetto@tin.it', 1, 0, '2016-09-04 06:02:27', NULL, NULL, NULL),
 (72, 'Consulente Web Marketing | strategie SEO/SEM/DEM', 'Una persona che ti può aiutare nelle tue attività di digital marketing', 'http://www.marketingonweb.it', 67, NULL, NULL, NULL, NULL, NULL, 0, '2016-09-04 08:16:03', NULL, NULL, NULL),
 (4, 'Sambo Gomme - Yokohama Pneumatici', 'Sambo Gomme - Rivenditore Ufficiale Pneumatici Yokohama:\r\nAmmortizzatori, Assetto Ruote, Bilanciatura Elettronica Completa, Consulente di Guida, Controllo Elettronico, Preparazioni Sportive', 'http://www.sambogomme.com/', 16, 1, 708, 6, 'emanuel.righetto@tin.it', 1, 0, '2003-11-16 18:17:29', '', '', ''),
@@ -166,7 +98,3 @@ INSERT INTO `cncat_main` (`lid`, `title`, `description`, `url`, `cat1`, `gin`, `
 (64, 'Negretto Camini d''Autore', 'Giuseppe Negretto, dal 1995 mette a frutto la sua esperienza professionale, nella costruzione di camini artigianali con materiali di recupero e di caminetti dal design moderno o classico. Si avvale della preziosa collaborazione di prestigiosi studi di architettura, per fornire un servizio completo, dalla progettazione alla realizzazione di complementi di arredo per interni.', 'https://www.negrettocamini.it', 64, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-06-15 01:49:14', '', '', ''),
 (65, 'Cortona Volley', 'Portale Associazione Sportiva Dilettantisca Cortona Volley, pallavolo Serie B2 maschile, Serie D femminile, Settore giovanile maschile e femminile', 'http://www.cortonavolley.it', 6, 0, 738, 0, 'info@cortonavolley.it', 1, 0, '2007-10-09 16:14:27', '', '', ''),
 (66, 'Studio Associato di Topografia', 'S.a.t. opera dal 1997 nel settore della topografia e dell''edilizia a supporto di privati, enti pubblici, imprese e liberi professionisti.', 'http://www.satgeorilievi.com', 67, 0, 0, 0, 'emanuel.righetto@tin.it', 2, 0, '2007-10-22 09:55:07', '', '', '');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Link
  *
- * @ORM\Table(name="cncat_main")
+ * @ORM\Table(name="links")
  * @ORM\Entity(repositoryClass="App\Repository\LinkRepository")
  */
 class Link
@@ -92,11 +92,11 @@ class Link
     private $broken = '0';
 
     /**
-     * @var \DateTime|null
+     * @var \DateTime
      *
-     * @ORM\Column(name="insert_date", type="datetime", nullable=true, options={"default"="NULL"})
+     * @ORM\Column(name="insert_date", type="datetime", nullable=true)
      */
-    private $insertDate = 'NULL';
+    private $insertDate;
 
     /**
      * @var string|null
@@ -118,6 +118,11 @@ class Link
      * @ORM\Column(name="resfield3", type="text", length=65535, nullable=true, options={"default"="NULL"})
      */
     private $resfield3 = 'NULL';
+
+    public function __construct()
+    {
+        $this->insertDate = new \DateTime();
+    }
 
     public function getLid(): ?int
     {
