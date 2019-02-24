@@ -11,7 +11,7 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 
-const spaghettiError = $(".spaghetti-error");
+const spaghettiError = $("#spaghetti-error");
 if (spaghettiError.length > 0) {
     let i = 0, data = "", text = spaghettiError.attr("data-text");
     let typing = setInterval(() => {

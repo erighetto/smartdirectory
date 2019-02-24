@@ -4,7 +4,7 @@ body {
   background-color: $gray-400;
 }
 
-.spaghetti-error {
+#spaghetti-error {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,7 +21,7 @@ body {
     text-align: center;
   }
 
-  spaghetti {
+  .spaghetti {
     width: var(--width);
     height: var(--height);
     filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, .2));
@@ -30,7 +30,7 @@ body {
     position: relative;
   }
 
-  plate {
+  .plate {
     width: 100%;
     height: calc(var(--height) / 2.5);
     background: #CAD7E4;
@@ -63,7 +63,7 @@ body {
     }
   }
 
-  pasta {
+  .pasta {
     width: calc(var(--width) / 4);
     height: calc(var(--width) / 4);
     border: 5px solid #DEA631;
@@ -102,7 +102,7 @@ body {
     }
   }
 
-  meat {
+  .meat {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -114,7 +114,7 @@ body {
     z-index: 3;
   }
 
-  fork {
+  .fork {
     width: 20px;
     height: calc(var(--height) - 30px);
     background: #D3D3D3;
