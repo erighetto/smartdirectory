@@ -7,13 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class HomeController
+ * Class DefaultController
  * @package App\Controller
  */
-class HomeController extends AbstractController
+class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="index")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -23,9 +23,20 @@ class HomeController extends AbstractController
             ->getRepository(Category::class)
             ->findAllOrdered();
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('default/index.html.twig', [
             'title' => 'Home',
             'categories' => $categories,
+        ]);
+    }
+
+    /**
+     * @Route("/error", name="error")
+     */
+    public function error()
+    {
+        return $this->render('default/error.html.twig',
+        [
+            'title' => 'Error'
         ]);
     }
 }
