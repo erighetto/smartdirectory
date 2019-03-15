@@ -31,6 +31,8 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/error", name="error")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function error()
     {

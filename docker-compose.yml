@@ -48,3 +48,15 @@ services:
       PHP_MAX_INPUT_VARS: 1G
     ports:
       - "8080:80"
+
+  node-serve:
+    image: erighetto/node-serve
+    container_name: "${PROJECT_NAME}_node_serve"
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./dist:/home/node/app
+    ports:
+      - "8999:8080"
