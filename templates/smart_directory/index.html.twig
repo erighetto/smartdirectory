@@ -3,22 +3,24 @@
 {% block body %}
     <div class="jumbotron">
         <div class="container">
-            <h1>
-                {% if parents %}
-                    {% for parent in parents %}
-                        {% if loop.first %}
-                        {% set lev1 = parent.name ~ " " ~ parent.cid %}
-                            <a href="{{ path('smart_directory',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
-                            <i class="fas fa-arrow-right"></i>
-                         {% else %}
-                             {% set lev2 = parent.name ~ " " ~ parent.cid %}
-                             <a href="{{ path('smart_directory',{"lev1":lev1|slugify,"lev2":lev2|slugify}) }}">{{ parent.name }}</a>
-                             <i class="fas fa-arrow-right"></i>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-                {{ current.name }}
-            </h1>
+            <div class="mb-5">
+                <h1>
+                    {% if parents %}
+                        {% for parent in parents %}
+                            {% if loop.first %}
+                                {% set lev1 = parent.name ~ " " ~ parent.cid %}
+                                <a href="{{ path('smart_directory',{"lev1":lev1|slugify}) }}">{{ parent.name }}</a>
+                                <i class="fas fa-arrow-right"></i>
+                            {% else %}
+                                {% set lev2 = parent.name ~ " " ~ parent.cid %}
+                                <a href="{{ path('smart_directory',{"lev1":lev1|slugify,"lev2":lev2|slugify}) }}">{{ parent.name }}</a>
+                                <i class="fas fa-arrow-right"></i>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {{ current.name }}
+                </h1>
+            </div>
             <ul class="list-group">
                 {% for item in children %}
                     {% if parents %}
