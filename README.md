@@ -13,6 +13,7 @@
     docker-compose up    
     docker exec -it -u application smartdirectory_php bash    
     composer install --prefer-dist    
+    composer dump-env prod   
     php bin/console doctrine:schema:update --force    
     php bin/console doctrine:database:import .dumps/smartdirectory.sql   
 
