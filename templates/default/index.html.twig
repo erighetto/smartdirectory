@@ -9,7 +9,8 @@
             <ul class="list-group">
                 {% for item in categories %}
                     <li class="list-group-item"><i class="far fa-folder-open"></i>
-                        <a href="{{ path('smart_directory', {'lev1': item.name|lower|replace({' ': "-"})~"-"~item.cid}) }}">{{ item.name }}</a>
+                        {% set slug = item.name ~ " " ~ item.cid %}
+                        <a href="{{ path('smart_directory', {'lev1': slug|slugify}) }}">{{ item.name }}</a>
                     </li>
                 {% endfor %}
             </ul>
