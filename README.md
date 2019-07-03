@@ -29,5 +29,5 @@
 ## Generate static file  
 
     docker exec -it -u application smartdirectory_php bash   
-    ./publish.sh
+    ./build.sh
 
