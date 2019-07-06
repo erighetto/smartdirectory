@@ -1,0 +1,3 @@
+# config/packages/presta_sitemap.yaml
+presta_sitemap:
+  dump_directory: dist

@@ -9,22 +9,16 @@
 ## Bootstrapping the project
 
     git clone git@github.com:erighetto/smartdirectory.git    
-    cd smartdirectory    
+    cd smartdirectory   
+    yarn install    
+    yarn build    
     docker-compose up    
     docker exec -it -u application smartdirectory_php bash    
     composer install --prefer-dist    
-    composer dump-env prod   
+    composer dump-env dev   
     php bin/console doctrine:schema:update --force    
     php bin/console doctrine:database:import .dumps/smartdirectory.sql   
 
-  
-## Compile assets  
-
-    cd smartdirectory    
-    yarn install    
-    yarn build  
-
-  
   
 ## Generate static file  
 

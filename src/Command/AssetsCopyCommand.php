@@ -52,7 +52,7 @@ class AssetsCopyCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $io->comment('Copy assets from public/build to dist/build');
+        $io->text('Copy assets from public/build to dist/build');
 
         $root = $this->params->get('kernel.project_dir') . DIRECTORY_SEPARATOR;
         $source = $root . "public/build";
