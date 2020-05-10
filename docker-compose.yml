@@ -60,3 +60,11 @@ services:
       - ./dist:/home/node/app
     ports:
       - "8999:8080"
+
+  node-yarn:
+    image: node
+    container_name: "${PROJECT_NAME}_node_yarn"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c 'tail -f /dev/null'
