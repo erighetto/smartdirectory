@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 export AWS_PROFILE="ema" && export AWS_REGION=eu-central-1
-cd dist
+cd dist || exit
 aws s3 sync . s3://webconsulenza.com --exclude=.DS_Store --delete

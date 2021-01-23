@@ -10,18 +10,21 @@
 
     git clone git@github.com:erighetto/smartdirectory.git    
     cd smartdirectory   
-    yarn install    
-    yarn build    
-    docker-compose up    
-    docker exec -it -u application smartdirectory_php bash    
+    make start 
+    make node 
+    yarn install     
+    yarn build 
+    exit 
+    make shell    
     composer install --prefer-dist    
     composer dump-env dev   
     php bin/console doctrine:schema:update --force    
-    php bin/console doctrine:database:import .dumps/smartdirectory.sql   
+    php bin/console doctrine:database:import .dumps/smartdirectory.sql
+    exit
 
   
 ## Generate static file  
 
-    docker exec -it -u application smartdirectory_php bash   
+    make shell  
     ./build.sh
 
